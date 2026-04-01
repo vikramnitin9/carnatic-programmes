@@ -229,7 +229,7 @@ title: Search
 
 <script>
 (function() {
-  const BASE = document.querySelector('header a').getAttribute('href').replace(/\/$/, '');
+  const BASE = document.querySelector('.header-nav a').getAttribute('href').replace(/\/$/, '');
   let DATA = null;
   let artistIndex = {};
   let songIndex = [];
@@ -418,9 +418,10 @@ title: Search
       return;
     }
 
-    const countText = `<p class="results-count">${matches.length} result${matches.length !== 1 ? 's' : ''} found</p>`;
+    const showing = Math.min(matches.length, 500);
+    const countText = `<p class="results-count">${matches.length} result${matches.length !== 1 ? 's' : ''} found${matches.length > 500 ? ' (showing first 500)' : ''}</p>`;
 
-    const rows = matches.slice(0, 200).map(s => `
+    const rows = matches.slice(0, 500).map(s => `
       <tr>
         <td>${esc(s.song)}</td>
         <td>${esc(s.raga)}</td>
