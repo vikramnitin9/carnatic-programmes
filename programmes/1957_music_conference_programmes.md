@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1957
 
 
----
-
 ## Saturday 21st December 1957 at 6:30 p.m.
 
 Sangita Ratna

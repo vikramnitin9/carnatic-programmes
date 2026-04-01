@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1958
 
 
----
-
 ## Saturday 20th December 1958 at 6:30 p.m.
 
 **Sri Karukurichi Arunachalam & Nachiarkoil Raghava Pillai** — Nagaswaram

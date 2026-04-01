@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1956
 
 
----
-
 ## Saturday 22nd December 1956 at 6:30 p.m.
 
 **Sri Tiruvizhimizhalai Brothers Govindarajan & Dakshinamurthi** — Nagaswaram

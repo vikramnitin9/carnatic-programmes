@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1941
 
 
----
-
 ## Monday 22nd December 1941 (Opening Day) at 5 p.m.
 
 **Srimati Kamala Krishnamoorthi** — Vocal

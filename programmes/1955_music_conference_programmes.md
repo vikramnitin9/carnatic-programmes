@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1955
 
 
----
-
 ## Saturday 24th December 1955 at 6:30 p.m.
 
 **Sri T. Viswanathan** — Flute

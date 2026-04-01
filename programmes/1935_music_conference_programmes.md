@@ -9,8 +9,6 @@ conference: "Music Academy — Music Conference"
 # The Music Academy, Madras — Music Conference, 1935
 
 
----
-
 ## Sunday 22nd December 1935
 
 **Mrs. Nagaswamy Aiyar** — Vocal

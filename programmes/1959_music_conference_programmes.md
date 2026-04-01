@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1959
 
 
----
-
 ## Thursday 24th December 1959 at 5 p.m.
 
 **Karukurichi Arunachalam** — Nagaswaram

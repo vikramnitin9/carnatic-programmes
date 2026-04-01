@@ -9,8 +9,6 @@ conference: "Music Academy — Music Conference"
 # Music Academy, Madras — Music Conference 1937
 
 
----
-
 ## Wednesday, 22nd December 1937
 
 **The Trivandrum Sisters** — Vocal

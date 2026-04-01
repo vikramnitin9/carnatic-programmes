@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1952
 
 
----
-
 ## Friday 19th December 1952 at 6:15 p.m. (Opening) — Sundareswarar Hall, Mylapore
 
 **Veena Vidvan Sri Sambhasiva Iyer and Srimati Ranganayaki Rajagopalan** — Veena

@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1954
 
 
----
-
 ## Wednesday 22nd December 1954 at Sundareswarar Hall at 6:15 p.m.
 
 **Vidvan Sri Chittoor Subrahmanya Pillai** — Vocal

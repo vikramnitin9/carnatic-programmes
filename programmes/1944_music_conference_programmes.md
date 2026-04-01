@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1944
 
 
----
-
 ## Friday 22nd December 1944 (Opening Day) at 6:30 p.m.
 
 **Mrs. Rukmini Rajagopalan** — Vocal

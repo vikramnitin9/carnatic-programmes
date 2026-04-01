@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1946
 
 
----
-
 ## Saturday 21st December 1946 at 7 p.m. (Opening)
 
 **Srimati Susila Achyutaraman** — Vocal

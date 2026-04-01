@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1945
 
 
----
-
 ## Saturday 22nd December 1945 at 7 p.m. (Opening)
 
 **Srimati Ananthalakshmi Satagopan** — Vocal

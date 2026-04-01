@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1947
 
 
----
-
 ## Tuesday 23rd December 1947 at 6 p.m.
 
 **Srimati T. V. Vasanta** — Vocal

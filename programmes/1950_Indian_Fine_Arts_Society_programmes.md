@@ -9,8 +9,6 @@ conference: "Indian Fine Arts Society South Indian Music Conference"
 # Indian Fine Arts Society Madras 18th South Indian Music Conference 1950
 
 
----
-
 ## Saturday 23rd December 1950 at 6 p.m.
 
 Dances of India

@@ -9,8 +9,6 @@ conference: "Music Academy — Music Festival"
 # Music Academy Madras — Music Festival, 1938
 
 
----
-
 ## Friday, 23rd December 1938; 6:30 to 7:30 p.m.
 
 **Srimathi Vasanthakokilam** — Vocal

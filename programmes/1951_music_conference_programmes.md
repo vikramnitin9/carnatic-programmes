@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1951
 
 
----
-
 ## Friday 21st December 1951 at 6:15 p.m. — Sundareswarar Hall (Opening Concert)
 
 **Srimati Rukmini Sundararajan** — Vocal

@@ -9,8 +9,6 @@ conference: "Music Academy — Music Conference"
 # The Music Academy, Madras — Music Conference, 1936
 
 
----
-
 ## Wednesday 23rd December 1936
 
 **K. V. Rajarama Aiyar** — Flute

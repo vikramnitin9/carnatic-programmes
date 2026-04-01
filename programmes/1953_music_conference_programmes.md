@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1953
 
 
----
-
 ## Monday 21st December 1953 at the Sundareswarar Hall at 6-15 p.m.
 
 **Vidvan Sri Tiruppamburam N. Swaminatha Pillai** — Flute

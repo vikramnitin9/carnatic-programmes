@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1940
 
 
----
-
 ## Sunday 22nd December 1940 (Opening Day) at 5 p.m.
 
 **Srimatis Vijayalakshmi Natarajan and Meenakshi Ramakrishnan** — Vocal

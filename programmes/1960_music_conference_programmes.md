@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1960
 
 
----
-
 ## Thursday 22nd December 1960 at 3:45 p.m.
 
 **Sri T. K. Jayarama Iyer** — Violin

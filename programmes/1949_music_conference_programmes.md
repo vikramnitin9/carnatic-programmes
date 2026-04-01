@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1949
 
 
----
-
 ## Friday 23rd December 1949 at 6:30 p.m.
 
 **Srimathi Savitri Ganesan** — Vocal

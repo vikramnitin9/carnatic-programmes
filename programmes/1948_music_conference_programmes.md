@@ -9,8 +9,6 @@ conference: "Music Academy Music Conference"
 # Music Academy Madras Music Conference 1948
 
 
----
-
 ## Friday 24th December 1948 at 6:30 p.m.
 
 **Srimati V.R. Chandra Ramamoorthy** — Vocal
