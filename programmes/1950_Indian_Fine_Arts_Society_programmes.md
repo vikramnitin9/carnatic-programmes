@@ -8,7 +8,6 @@ conference: "Indian Fine Arts Society South Indian Music Conference"
 
 # Indian Fine Arts Society Madras 18th South Indian Music Conference 1950
 
-Extracted from: `TVA_PRL_0011014_The_Indian_Fine_Arts_Society_1950.pdf`
 
 ---
 

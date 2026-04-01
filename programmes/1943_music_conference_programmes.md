@@ -8,7 +8,6 @@ conference: "Music Academy Music Conference"
 
 # Music Academy Madras Music Conference 1943
 
-Extracted from: `1943_17th Conference souvenir.pdf`
 
 All concerts held at Sri Sundareswarar Hall, Mylapore.
 

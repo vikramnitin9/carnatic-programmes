@@ -8,7 +8,6 @@ conference: "Music Academy Music Conference"
 
 # Music Academy Madras Music Conference 1954
 
-Extracted from: `1954_28th conference souvenir.pdf`
 
 ---
 

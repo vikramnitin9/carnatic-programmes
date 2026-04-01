@@ -8,7 +8,6 @@ conference: "Music Academy Music Conference"
 
 # Music Academy Madras Music Conference 1953
 
-Extracted from: `1953_27th conference souvenir.pdf`
 
 ---
 

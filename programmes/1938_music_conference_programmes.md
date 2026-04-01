@@ -8,7 +8,6 @@ conference: "Music Academy — Music Festival"
 
 # Music Academy Madras — Music Festival, 1938
 
-Extracted from: `1938_Programme of the Music festival.pdf`
 
 ---
 

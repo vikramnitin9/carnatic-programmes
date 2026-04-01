@@ -8,7 +8,6 @@ conference: "Music Academy — Music Conference"
 
 # The Music Academy, Madras — Music Conference, 1936
 
-Extracted from: `1936n_Programme of the music conference.pdf`
 
 ---
 

@@ -8,7 +8,6 @@ conference: "Music Academy Music Conference"
 
 # Music Academy Madras Music Conference 1946
 
-Extracted from: `1946_20th Conference souvenir.pdf`
 
 ---
 

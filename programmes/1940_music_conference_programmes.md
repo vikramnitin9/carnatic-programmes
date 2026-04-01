@@ -8,7 +8,6 @@ conference: "Music Academy Music Conference"
 
 # Music Academy Madras Music Conference 1940
 
-Extracted from: `1940_Conference and concert, souvenir, programme.pdf`
 
 ---
 
