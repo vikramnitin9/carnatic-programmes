@@ -7,6 +7,8 @@ title: Home
 
 Historical concert programmes from the Music Academy Madras and other South Indian music conferences, spanning 1935–1960.
 
+<p style="margin: 1rem 0;"><a href="{{ '/search' | relative_url }}" style="font-size: 1.05rem;">🔍 Search by artist, song, raga, tala, or composer →</a></p>
+
 {% assign programmes = site.pages | where: "type", "programme" | sort: "year" %}
 {% assign decades = programmes | group_by_exp: "p", "p.year | divided_by: 10 | times: 10" %}
 

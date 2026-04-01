@@ -44,14 +44,31 @@
       text-transform: uppercase;
     }
 
-    header h1 a { color: var(--header-text); text-decoration: none; }
-    header h1 a:hover { text-decoration: none; opacity: 0.9; }
+
 
     header p {
       margin-top: 0.5rem;
       font-size: 0.95rem;
       opacity: 0.8;
       font-style: italic;
+    }
+
+    .header-nav {
+      margin-top: 0.75rem;
+    }
+    .header-nav a {
+      color: var(--header-text);
+      opacity: 0.85;
+      font-size: 0.9rem;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid rgba(245,230,211,0.3);
+      border-radius: 4px;
+      transition: opacity 0.2s;
+    }
+    .header-nav a:hover {
+      opacity: 1;
+      text-decoration: none;
+      border-color: rgba(245,230,211,0.6);
     }
 
     main {
@@ -206,6 +223,58 @@
       color: #999;
     }
 
+    /* Search */
+    .search-container { margin: 1.5rem 0 0.5rem; }
+
+    .search-input {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      font-family: inherit;
+      font-size: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--card-bg);
+      color: var(--text);
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(107, 58, 42, 0.15);
+    }
+
+    .search-results { margin-top: 1rem; }
+
+    .search-result {
+      padding: 0.8rem 1rem;
+      border-left: 3px solid var(--accent);
+      background: var(--card-bg);
+      margin-bottom: 0.75rem;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .search-result a { font-weight: 600; font-size: 1rem; }
+
+    .search-result .snippet {
+      font-size: 0.88rem;
+      color: #666;
+      margin-top: 0.3rem;
+      line-height: 1.5;
+    }
+
+    .search-result .snippet mark {
+      background: rgba(107, 58, 42, 0.15);
+      color: var(--accent);
+      padding: 0.05em 0.2em;
+      border-radius: 2px;
+    }
+
+    .search-info {
+      font-size: 0.9rem;
+      color: #888;
+      font-style: italic;
+    }
+
     @media (max-width: 600px) {
       header { padding: 1.5rem 1rem; }
       header h1 { font-size: 1.3rem; }
@@ -219,8 +288,12 @@
 </head>
 <body>
   <header>
-    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+    <h1>{{ site.title }}</h1>
     <p>{{ site.description }}</p>
+    <nav class="header-nav">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/search' | relative_url }}">🔍 Search</a>
+    </nav>
   </header>
 
   <main>
@@ -262,5 +335,85 @@
   <footer>
     <p>{{ site.title }} · Historical Music Conference Programmes Archive</p>
   </footer>
+  <script>
+  (function() {
+    var input = document.getElementById('search-input');
+    if (!input) return;
+
+    var results = document.getElementById('search-results');
+    var sections = document.querySelectorAll('.decade-section');
+    var data = null;
+    var timer = null;
+
+    input.addEventListener('input', function() {
+      clearTimeout(timer);
+      timer = setTimeout(function() { search(input.value.trim()); }, 200);
+    });
+
+    function load(cb) {
+      if (data) return cb(data);
+      var base = '{{ "/" | relative_url }}'.replace(/\/$/, '');
+      fetch(base + '/search.json').then(function(r) { return r.json(); }).then(function(d) {
+        data = d;
+        cb(d);
+      });
+    }
+
+    function search(q) {
+      if (q.length < 2) {
+        results.innerHTML = '';
+        sections.forEach(function(s) { s.style.display = ''; });
+        return;
+      }
+      load(function(pages) {
+        var terms = q.toLowerCase().split(/\s+/);
+        var hits = pages.filter(function(p) {
+          var text = (p.title + ' ' + p.content).toLowerCase();
+          return terms.every(function(t) { return text.indexOf(t) !== -1; });
+        });
+
+        sections.forEach(function(s) { s.style.display = 'none'; });
+
+        if (!hits.length) {
+          results.innerHTML = '<p class="search-info">No results found.</p>';
+          return;
+        }
+
+        results.innerHTML = '<p class="search-info">' + hits.length +
+          ' programme' + (hits.length !== 1 ? 's' : '') + ' found</p>' +
+          hits.map(function(h) {
+            return '<div class="search-result"><a href="' + h.url + '">' +
+              escHtml(h.title) + '</a><div class="snippet">' +
+              snippet(h.content, terms) + '</div></div>';
+          }).join('');
+      });
+    }
+
+    function snippet(text, terms) {
+      var lower = text.toLowerCase();
+      var best = -1;
+      terms.forEach(function(t) {
+        var i = lower.indexOf(t);
+        if (i !== -1 && (best === -1 || i < best)) best = i;
+      });
+      if (best === -1) return '';
+      var s = Math.max(0, best - 60);
+      var e = Math.min(text.length, best + 120);
+      var snip = (s > 0 ? '…' : '') + text.substring(s, e).replace(/\s+/g, ' ') + (e < text.length ? '…' : '');
+      snip = escHtml(snip);
+      terms.forEach(function(t) {
+        var re = new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+        snip = snip.replace(re, '<mark>$1</mark>');
+      });
+      return snip;
+    }
+
+    function escHtml(s) {
+      var d = document.createElement('div');
+      d.appendChild(document.createTextNode(s));
+      return d.innerHTML;
+    }
+  })();
+  </script>
 </body>
 </html>
