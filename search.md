@@ -117,15 +117,15 @@ title: Search
     font-size: 0.95rem;
   }
 
-  /* Artist results */
-  .artist-accordion {
+  /* Artist results — flat accordion */
+  .session-accordion {
     border: 1px solid var(--border);
     border-radius: 6px;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     overflow: hidden;
   }
-  .artist-accordion > summary {
-    padding: 0.85rem 1rem;
+  .session-accordion > summary {
+    padding: 0.75rem 1rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -133,61 +133,43 @@ title: Search
     background: var(--card-bg);
     list-style: none;
     transition: background 0.15s;
-  }
-  .artist-accordion > summary::-webkit-details-marker { display: none; }
-  .artist-accordion > summary::before {
-    content: '▸';
-    margin-right: 0.6rem;
-    color: var(--accent);
-    transition: transform 0.15s;
-    display: inline-block;
-  }
-  .artist-accordion[open] > summary::before {
-    transform: rotate(90deg);
-  }
-  .artist-accordion > summary:hover { background: rgba(139,69,19,0.05); }
-  .artist-name { font-weight: 600; color: var(--accent); }
-  .result-count {
-    font-size: 0.82rem;
-    color: #999;
-    background: rgba(139,69,19,0.08);
-    padding: 0.15rem 0.55rem;
-    border-radius: 10px;
-  }
-
-  .artist-sessions { padding: 0 1rem 0.75rem; }
-
-  .session-accordion {
-    border-left: 3px solid var(--border);
-    margin: 0.5rem 0;
-    padding-left: 0;
-  }
-  .session-accordion > summary {
-    padding: 0.5rem 0.75rem;
-    cursor: pointer;
-    font-size: 0.92rem;
-    list-style: none;
-    color: var(--text);
-    transition: color 0.15s;
+    gap: 1rem;
   }
   .session-accordion > summary::-webkit-details-marker { display: none; }
   .session-accordion > summary::before {
     content: '▸';
-    margin-right: 0.4rem;
-    color: var(--accent-light);
-    display: inline-block;
+    margin-right: 0.5rem;
+    color: var(--accent);
     transition: transform 0.15s;
+    display: inline-block;
+    flex-shrink: 0;
   }
   .session-accordion[open] > summary::before {
     transform: rotate(90deg);
   }
-  .session-accordion[open] {
-    border-left-color: var(--accent);
+  .session-accordion > summary:hover { background: rgba(139,69,19,0.05); }
+  .artist-name { font-weight: 600; color: var(--accent); }
+  .artist-role { color: #888; font-size: 0.9rem; }
+  .session-meta {
+    font-size: 0.82rem;
+    color: #888;
+    text-align: right;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
-  .session-accordion > summary:hover { color: var(--accent); }
+  .session-year {
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .session-date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
 
   .session-content {
-    padding: 0.5rem 0.75rem 0.75rem;
+    padding: 0.75rem 1rem 1rem;
   }
   .session-performers p {
     margin: 0.2rem 0;
@@ -201,11 +183,6 @@ title: Search
     display: inline-block;
     margin-top: 0.75rem;
     font-size: 0.85rem;
-  }
-
-  .session-year {
-    font-weight: 700;
-    color: var(--accent);
   }
 
   /* Song results table */
@@ -257,7 +234,7 @@ title: Search
 
     DATA.forEach(prog => {
       prog.sessions.forEach(session => {
-        // Artist index
+        // Artist index: flat list of sessions per artist
         session.performers.forEach(perf => {
           const key = perf.name;
           if (!artistIndex[key]) artistIndex[key] = [];
@@ -266,6 +243,7 @@ title: Search
             conference: prog.conference,
             file: prog.file,
             date: session.date,
+            role: perf.role,
             performers: session.performers,
             songs: session.songs
           });
@@ -322,58 +300,55 @@ title: Search
       return;
     }
 
-    const matches = Object.entries(artistIndex)
-      .filter(([name]) => name.toLowerCase().includes(q))
-      .sort((a, b) => {
-        // Exact prefix matches first
-        const aStarts = a[0].toLowerCase().indexOf(q) === 0 ? 0 : 1;
-        const bStarts = b[0].toLowerCase().indexOf(q) === 0 ? 0 : 1;
-        if (aStarts !== bStarts) return aStarts - bStarts;
-        return a[0].localeCompare(b[0]);
-      });
+    // Collect all sessions across matching artists into a flat list
+    const sessions = [];
+    Object.entries(artistIndex).forEach(([name, entries]) => {
+      if (name.toLowerCase().includes(q)) {
+        entries.forEach(s => {
+          sessions.push({ artistName: name, ...s });
+        });
+      }
+    });
 
-    if (matches.length === 0) {
+    sessions.sort((a, b) => a.year - b.year || a.date.localeCompare(b.date));
+
+    if (sessions.length === 0) {
       artistResults.innerHTML = '<p class="no-results">No artists found</p>';
       return;
     }
 
-    const countText = `<p class="results-count">${matches.length} artist${matches.length !== 1 ? 's' : ''} found</p>`;
+    const countText = `<p class="results-count">${sessions.length} programme${sessions.length !== 1 ? 's' : ''} found</p>`;
 
-    const html = matches.slice(0, 100).map(([name, sessions]) => {
-      const sessionsHtml = sessions
-        .sort((a, b) => a.year - b.year)
-        .map(s => {
-          const perfHtml = s.performers.map(p =>
-            `<p><strong>${esc(p.name)}</strong>${p.role ? ' — ' + esc(p.role) : ''}</p>`
-          ).join('');
+    const html = sessions.slice(0, 200).map(s => {
+      const perfHtml = s.performers.map(p =>
+        `<p><strong>${esc(p.name)}</strong>${p.role ? ' — ' + esc(p.role) : ''}</p>`
+      ).join('');
 
-          let tableHtml = '';
-          if (s.songs.length > 0) {
-            const rows = s.songs.map(song =>
-              `<tr><td>${esc(song.song)}</td><td>${esc(song.raga)}</td><td>${esc(song.tala)}</td><td>${esc(song.composer)}</td></tr>`
-            ).join('');
-            tableHtml = `<table><thead><tr><th>Song</th><th>Raga</th><th>Tala</th><th>Composer</th></tr></thead><tbody>${rows}</tbody></table>`;
-          }
+      let tableHtml = '';
+      if (s.songs.length > 0) {
+        const rows = s.songs.map(song =>
+          `<tr><td>${esc(song.song)}</td><td>${esc(song.raga)}</td><td>${esc(song.tala)}</td><td>${esc(song.composer)}</td></tr>`
+        ).join('');
+        tableHtml = `<table><thead><tr><th>Song</th><th>Raga</th><th>Tala</th><th>Composer</th></tr></thead><tbody>${rows}</tbody></table>`;
+      }
 
-          return `
-            <details class="session-accordion">
-              <summary><span class="session-year">${s.year}</span> · ${esc(s.date)}</summary>
-              <div class="session-content">
-                <div class="session-performers">${perfHtml}</div>
-                ${tableHtml}
-                <a href="${BASE}/programmes/${s.file}" class="view-link">View full programme →</a>
-              </div>
-            </details>`;
-        }).join('');
-
-      const count = sessions.length;
       return `
-        <details class="artist-accordion">
+        <details class="session-accordion">
           <summary>
-            <span><span class="artist-name">${esc(name)}</span></span>
-            <span class="result-count">${count} programme${count !== 1 ? 's' : ''}</span>
+            <span>
+              <span class="artist-name">${esc(s.artistName)}</span>
+              ${s.role ? '<span class="artist-role"> — ' + esc(s.role) + '</span>' : ''}
+            </span>
+            <span class="session-meta">
+              <span class="session-year">${s.year}</span> · ${esc(s.conference)}
+            </span>
           </summary>
-          <div class="artist-sessions">${sessionsHtml}</div>
+          <div class="session-content">
+            <p class="session-date">${esc(s.date)}</p>
+            <div class="session-performers">${perfHtml}</div>
+            ${tableHtml}
+            <a href="${BASE}/programmes/${s.file}" class="view-link">View full programme →</a>
+          </div>
         </details>`;
     }).join('');
 
