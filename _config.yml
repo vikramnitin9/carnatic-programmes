@@ -1,0 +1,14 @@
+title: "Parampara"
+description: "Historical South Indian Music Conference Programmes"
+baseurl: ""
+url: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .DS_Store
