@@ -1,6 +1,6 @@
 title: "Parampara"
 description: "Historical South Indian Music Conference Programmes"
-baseurl: ""
+baseurl: "/carnatic-programmes"
 url: ""
 
 markdown: kramdown
