@@ -7,6 +7,8 @@ title: Home
 
 Historical concert programmes from the Music Academy Madras and other South Indian music conferences, spanning 1935–1960.
 
+<p style="margin: 1rem 0; font-size: 0.9rem; color: #666; font-style: italic;">These records have been extracted using OCR on the original souvenir booklets, and as a result there may be minor errors. Cross-check any important information with the original PDFs.</p>
+
 <p style="margin: 1rem 0;"><a href="{{ '/search' | relative_url }}" style="font-size: 1.05rem;">🔍 Search by artist, song, raga, tala, or composer →</a></p>
 
 {% assign programmes = site.pages | where: "type", "programme" | sort: "year" %}
