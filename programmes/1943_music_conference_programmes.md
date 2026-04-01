@@ -4,6 +4,7 @@ title: "Music Academy Madras Music Conference 1943"
 year: 1943
 type: programme
 conference: "Music Academy Music Conference"
+pdf_url: "https://musicacademymadras.in/catalogue/files/souv/1943_17th%20Conference%20souvenir.pdf"
 ---
 
 # Music Academy Madras Music Conference 1943

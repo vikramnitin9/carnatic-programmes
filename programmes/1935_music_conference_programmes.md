@@ -4,6 +4,7 @@ title: "The Music Academy, Madras — Music Conference, 1935"
 year: 1935
 type: programme
 conference: "Music Academy — Music Conference"
+pdf_url: "https://musicacademymadras.in/catalogue/files/souv/1935n_Programme%20of%20the%20music%20conference.pdf"
 ---
 
 # The Music Academy, Madras — Music Conference, 1935

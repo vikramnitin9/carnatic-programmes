@@ -4,6 +4,7 @@ title: "Indian Fine Arts Society Madras 18th South Indian Music Conference 1950"
 year: 1950
 type: programme
 conference: "Indian Fine Arts Society South Indian Music Conference"
+pdf_url: "https://tamildigitallibrary.in/Articles/%E0%AE%87%E0%AE%A4%E0%AE%B4%E0%AF%8D-11014-The%20Indian%20fine%20arts%20society%20souvenir-1950-51-%28December%2C%201950%29"
 ---
 
 # Indian Fine Arts Society Madras 18th South Indian Music Conference 1950

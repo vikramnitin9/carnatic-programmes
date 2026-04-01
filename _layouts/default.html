@@ -85,6 +85,13 @@
       font-size: 0.9rem;
     }
 
+    .pdf-link {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+    }
+
     h1 {
       font-size: 1.5rem;
       color: var(--accent);
@@ -301,6 +308,9 @@
   <main>
     {% if page.type == "programme" %}
     <a href="{{ '/' | relative_url }}" class="back-link">← All Programmes</a>
+    {% if page.pdf_url %}
+    <a href="{{ page.pdf_url }}" class="pdf-link" target="_blank" rel="noopener">📄 View original PDF</a>
+    {% endif %}
     {% endif %}
 
     {{ content }}

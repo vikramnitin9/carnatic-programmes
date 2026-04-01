@@ -4,6 +4,7 @@ title: "Music Academy Madras Music Conference 1949"
 year: 1949
 type: programme
 conference: "Music Academy Music Conference"
+pdf_url: "https://musicacademymadras.in/catalogue/files/souv/1949_23rd%20Conference%20souvenir.pdf"
 ---
 
 # Music Academy Madras Music Conference 1949

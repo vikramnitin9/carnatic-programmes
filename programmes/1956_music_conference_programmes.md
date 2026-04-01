@@ -4,6 +4,7 @@ title: "Music Academy Madras Music Conference 1956"
 year: 1956
 type: programme
 conference: "Music Academy Music Conference"
+pdf_url: "https://musicacademymadras.in/catalogue/files/souv/1956_30th%20conference%20souvenir.pdf"
 ---
 
 # Music Academy Madras Music Conference 1956

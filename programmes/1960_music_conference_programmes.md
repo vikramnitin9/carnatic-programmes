@@ -4,6 +4,7 @@ title: "Music Academy Madras Music Conference 1960"
 year: 1960
 type: programme
 conference: "Music Academy Music Conference"
+pdf_url: "https://musicacademymadras.in/catalogue/files/souv/1960_Thirtfourth%20conference%20souvenir.pdf"
 ---
 
 # Music Academy Madras Music Conference 1960

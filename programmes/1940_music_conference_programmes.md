@@ -4,6 +4,7 @@ title: "Music Academy Madras Music Conference 1940"
 year: 1940
 type: programme
 conference: "Music Academy Music Conference"
+pdf_url: "https://musicacademymadras.in/catalogue/files/souv/1940_Conference%20and%20concert%2C%20souvenir%2C%20programme.pdf"
 ---
 
 # Music Academy Madras Music Conference 1940

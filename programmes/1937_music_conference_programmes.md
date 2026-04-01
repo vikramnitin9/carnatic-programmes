@@ -4,6 +4,7 @@ title: "Music Academy, Madras — Music Conference 1937"
 year: 1937
 type: programme
 conference: "Music Academy — Music Conference"
+pdf_url: "https://musicacademymadras.in/catalogue/files/souv/1937_Programme%20of%20the%20music%20conference.pdf"
 ---
 
 # Music Academy, Madras — Music Conference 1937

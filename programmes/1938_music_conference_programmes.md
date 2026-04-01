@@ -4,6 +4,7 @@ title: "Music Academy Madras — Music Festival, 1938"
 year: 1938
 type: programme
 conference: "Music Academy — Music Festival"
+pdf_url: "https://musicacademymadras.in/catalogue/files/souv/1938_Programme%20of%20the%20Music%20festival.pdf"
 ---
 
 # Music Academy Madras — Music Festival, 1938
